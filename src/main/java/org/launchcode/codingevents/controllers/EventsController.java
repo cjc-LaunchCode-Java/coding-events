@@ -15,7 +15,7 @@ public class EventsController {
 
     @GetMapping
     public String displayAllEvents(Model model) {
-        model.addAttribute("title", "Events");
+        model.addAttribute("title", "All Events");
         model.addAttribute("events", EventData.getAll());
         return "events/index";
     }
@@ -62,8 +62,10 @@ public class EventsController {
 
     @PostMapping("edit")
     public String processEditForm(int eventId, String name, String description) {
-        //controller will go here
-        return "here";
+        Event event = EventData.getById(eventId);
+        event.setName(name);
+        event.setDescription(description);
+        return "redirect:";
     }
 
 }

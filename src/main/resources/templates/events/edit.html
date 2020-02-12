@@ -4,8 +4,8 @@
 <body class="container">
     <h1 th:text="${title}"></h1>
     <nav th:replace="fragments :: navigation"></nav>
-    <form method="post" action="/events/create">
-        <div class="form-group" th:action="@{/events/edit}">
+    <form method="post" action="/events/edit">
+        <div class="form-group">
             <input type="hidden" th:value="${event.id}" name="eventId">
             <label>Name:
                 <input type="text" name="name" class="form-control" th:value="${event.name}" />
